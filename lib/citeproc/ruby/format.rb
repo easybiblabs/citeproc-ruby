@@ -81,8 +81,13 @@ module CiteProc
           squeezable?(c) && string.end_with?(suffix[0, i + 1])
         }.join('')
 
+        # Handle special case: ,.
+        if suffix.start_with?('.') && string.end_with?(',')
+          string = string[0...-1]
+        end
+
         # Handle special cases like ?. or ;.
-        if suffix.start_with?('.') && string.end_with?(';', ',', '!', '?', ':')
+        if suffix.start_with?('.') && string.end_with?(';', '!', '?', ':')
           suffix = suffix[1..-1]
         end
 
