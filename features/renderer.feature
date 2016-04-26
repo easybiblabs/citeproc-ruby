@@ -57,6 +57,21 @@ Feature: Rendering CSL nodes
       | page   |  23 |
     Then the result should be: <b>5,</b> <b>23</b>,
 
+	@html @formatting
+	Scenario: Formatted Groups 2
+    Given the following style node:
+      """
+      <group suffix=".">
+        <text variable="title" suffix="," />
+        <text variable="container-title" prefix=" " suffix="," />
+      </group>
+			"""
+    When I render the following citation item as "html":
+			| type            | book              |
+			| title           | Title of the book |
+			| container-title | The container     |
+    Then the result should be: Title of the book, The container.
+
   Scenario: Page labels
     Given the following style node:
       """
