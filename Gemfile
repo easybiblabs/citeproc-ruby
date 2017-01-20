@@ -8,9 +8,6 @@ group :development, :test do
   gem 'rake', '~>10.0'
   gem 'rspec', '~>3.0', '<3.2.0'
   gem 'cucumber', '~>2.3'
-  gem 'simplecov', '~>0.8'
-  gem 'rubinius-coverage', :platforms => :rbx
-  gem 'coveralls', :require => false
 end
 
 group :debug do
@@ -27,7 +24,11 @@ group :debug do
 end
 
 group :optional do
-	gem 'edtf'
+  if RUBY_VERSION >= '2.2.2'
+    gem 'edtf', '~>3.0'
+  else
+    gem 'edtf', '~>2.0'
+  end
 	gem 'chronic'
 end
 
@@ -41,8 +42,14 @@ group :extra do
 	gem 'redcarpet', '~>3.0', :platforms => :mri
 end
 
-platform :rbx do
-  gem 'rubysl'
-  gem 'racc'
-  gem 'json'
+group :coverage do
+  gem 'simplecov', '~>0.8'
+  gem 'rubinius-coverage', :platforms => :rbx
+  gem 'coveralls', :require => false
+end
+
+group :rbx do
+  gem 'rubysl', :platforms => :rbx
+  gem 'racc', :platforms => :rbx
+  gem 'json', '~>1.8', :platforms => :rbx
 end

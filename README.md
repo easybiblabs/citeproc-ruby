@@ -7,8 +7,9 @@ cite processor, please refer to the documentation of the
 [citeproc](https://rubygems.org/gems/citeproc) gem instead.
 
 [![Build Status](https://secure.travis-ci.org/inukshuk/citeproc-ruby.png)](http://travis-ci.org/inukshuk/citeproc-ruby)
-[![Coverage Status](https://coveralls.io/repos/inukshuk/citeproc-ruby/badge.png?branch=master)](https://coveralls.io/r/inukshuk/citeproc-ruby?branch=master)
-[![Dependency Status](https://gemnasium.com/inukshuk/citeproc-ruby.png)](https://gemnasium.com/inukshuk/citeproc-ruby)
+[![Coverage Status](https://coveralls.io/repos/github/inukshuk/citeproc-ruby/badge.svg?branch=master)](https://coveralls.io/github/inukshuk/citeproc-ruby?branch=master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/inukshuk/citeproc-ruby.svg)](https://gemnasium.com/github.com/inukshuk/citeproc-ruby)
+[![Code Climate](https://codeclimate.com/github/inukshuk/citeproc-ruby/badges/gpa.svg)](https://codeclimate.com/github/inukshuk/citeproc-ruby)
 
 Quickstart
 ----------
@@ -146,7 +147,7 @@ this project as part of [Google Summer of Code](https://developers.google.com/op
 
 Copyright
 ---------
-Copyright 2009-2015 Sylvester Keil. All rights reserved.
+Copyright 2009-2016 Sylvester Keil. All rights reserved.
 
 Copyright 2012 President and Fellows of Harvard College.
 
