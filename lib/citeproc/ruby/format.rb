@@ -236,7 +236,7 @@ module CiteProc
 
           # TODO exceptions: word followed by colon
           first = true
-          output.gsub!(/\b(\p{L})([\p{L}\.]+)\b/) do |word|
+          output.gsub!(/\b(\p{L}|')([\p{L}\.|']+)\b/) do |word|
             first_letter = $1
             rest_of_word = $2
             result = word
@@ -248,7 +248,7 @@ module CiteProc
             result
           end
 
-          output.gsub!(/(\.|\b)(\p{Ll})([\p{L}\.]+)\b$/) do |word|
+          output.gsub!(/(\.|\b)(\p{Ll}|')([\p{L}\.|']+)\b$/) do |word|
             word_boundary = $1
             first_letter = $2
             rest_of_word = $3
