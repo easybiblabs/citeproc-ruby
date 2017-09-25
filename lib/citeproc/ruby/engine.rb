@@ -10,6 +10,12 @@ module CiteProc
       @version = CSL::Schema.version
       @priority = 1
 
+      APA  = CSL::Style.load './data/csl/apa'
+
+      MLA7 = CSL::Style.load './data/csl/mla7'
+
+      MLA8 = CSL::Style.load './data/csl/mla8'
+
       attr_reader :renderer, :style
 
       def_delegators :renderer,
@@ -23,7 +29,7 @@ module CiteProc
       end
 
       def style=(new_style)
-        @style = CSL::Style.load new_style
+        @style = fetch_style! new_style
       end
 
       def process(data)
@@ -76,6 +82,19 @@ module CiteProc
         end
       end
 
+      def fetch_style!(style)
+        case
+        when 'apa'
+          APA
+        when 'mla7'
+          MLA7
+        when 'mla8'
+          MLA8
+        else
+          CSL::Style.load style
+        end
+      end
+
       def update_items
         raise NotImplementedByEngine
       end
@@ -117,7 +136,7 @@ module CiteProc
         if processor.options[:style].is_a? CSL::Style
           @style = processor.options[:style]
         else
-          @style = CSL::Style.load processor.options[:style]
+          @style = fetch_style!(processor.options[:style])
         end
 
         # Preliminary locale override implementation!
