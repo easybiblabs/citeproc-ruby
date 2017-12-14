@@ -14,7 +14,7 @@
     </contributor>
     <category citation-format="author"/>
     <category field="generic-base"/>
-    <updated>2017-09-01T16:58:19+00:00</updated>
+    <updated>2017-12-14T19:55:23+00:00</updated>
   </info>
   <locale xml:lang="en">
     <style-options punctuation-in-quote="true"/>
@@ -816,10 +816,8 @@
                 <text macro="edition"/>
                 <text macro="volume"/>
                 <text macro="series"/>
-                <text variable="publisher-place" text-case="title"/>
                 <text macro="publisher"/>
                 <text macro="publication-date"/>
-                <text variable="locator"/>
                 <choose>
                   <if match="none" variable="source">
                     <group delimiter=". ">
@@ -828,6 +826,10 @@
                     </group>
                   </if>
                 </choose>
+                <group>
+                  <label variable="page" form="short"/>
+                  <text variable="page" prefix=" "/>
+                </group>
               </group>
               <group delimiter=", ">
                 <text variable="source" font-style="italic" text-case="title"/>
