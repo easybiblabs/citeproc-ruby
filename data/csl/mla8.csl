@@ -819,7 +819,7 @@
                 <text variable="publisher-place" text-case="title"/>
                 <text macro="publisher"/>
                 <text macro="publication-date"/>
-                <text macro="page"/>
+                <text macro="locator"/>
                 <choose>
                   <if match="none" variable="source">
                     <group delimiter=". ">
