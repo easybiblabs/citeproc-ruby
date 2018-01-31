@@ -77,7 +77,6 @@ module CiteProc
           year = year.to_s
 
           year << translate(:ad) if date.ad?
-          year << translate(:ad) if date.ad?
 
           year
 
